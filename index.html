@@ -3,197 +3,1150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco-Market Local | Inteligente & Sostenible</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome para Redes Sociales -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Eco-Market Local | Mosquera, Cundinamarca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
-            --primary-green: #2d6a4f;
-            --light-green: #d8f3dc;
-            --accent-green: #95d5b2;
-            --dark-grey: #333;
-            --white: #ffffff;
+            --verde-oscuro: #1a4731;
+            --verde-medio: #2d6a4f;
+            --verde-claro: #52b788;
+            --verde-palido: #d8f3dc;
+            --verde-menta: #b7e4c7;
+            --tierra: #8b5e3c;
+            --crema: #faf7f2;
+            --blanco: #ffffff;
+            --gris-texto: #2c2c2c;
+            --gris-suave: #f5f5f0;
+            --dorado: #c9a84c;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--white); color: var(--dark-grey); line-height: 1.6; }
+        html { scroll-behavior: smooth; }
 
-        /* Header & Logo */
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--crema);
+            color: var(--gris-texto);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ── HEADER ── */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 5%;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky; top: 0; z-index: 1000;
+            padding: 1rem 6%;
+            background: var(--blanco);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .logo-container { display: flex; align-items: center; gap: 10px; }
-        .logo-img { width: 50px; height: 50px; } /* Aquí irá tu logo */
-        
-        .social-links a {
-            color: var(--primary-green);
-            font-size: 1.5rem;
-            margin-left: 15px;
-            transition: 0.3s;
-        }
-        .social-links a:hover { color: var(--accent-green); }
 
-        /* Hero Section */
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1000');
-            background-size: cover;
-            background-position: center;
+        .logo-container {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .btn-main {
-            padding: 12px 30px;
-            background: var(--primary-green);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
+            gap: 12px;
         }
 
-        /* Espacio de Compras */
-        .shop-section { padding: 4rem 5%; text-align: center; }
-        .product-grid {
+        .logo-img {
+            width: 54px;
+            height: 54px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: var(--verde-palido);
+            padding: 4px;
+        }
+
+        .logo-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--verde-oscuro);
+            font-weight: 700;
+        }
+        .logo-text span {
+            font-size: 0.72rem;
+            color: var(--verde-claro);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        nav { display: flex; align-items: center; gap: 2rem; }
+        nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gris-texto);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--verde-medio); }
+
+        .social-links a {
+            color: var(--verde-medio);
+            font-size: 1.3rem;
+            margin-left: 12px;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+        .social-links a:hover { color: var(--verde-claro); transform: translateY(-2px); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 88vh;
+            background:
+                linear-gradient(135deg, rgba(26,71,49,0.82) 0%, rgba(45,106,79,0.70) 100%),
+                url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1400') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 0 6%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--crema);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+        .hero-content { max-width: 650px; color: var(--blanco); }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.35);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            font-weight: 900;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-main {
+            padding: 14px 32px;
+            background: var(--verde-claro);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+        .btn-main:hover { background: var(--verde-oscuro); transform: translateY(-2px); }
+
+        .btn-outline {
+            padding: 14px 32px;
+            border: 2px solid rgba(255,255,255,0.7);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
+        /* ── SECCIÓN MISIÓN/VISIÓN/HISTORIA ── */
+        .sobre-nosotros {
+            padding: 6rem 6%;
+            background: var(--blanco);
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--verde-claro);
+            margin-bottom: 0.6rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .mvh-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 0;
+        }
+
+        .mvh-texto p {
+            color: #555;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .mv-cards {
+            display: grid;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
-        .product-card {
-            background: var(--light-green);
-            padding: 1.5rem;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-        .product-card:hover { transform: translateY(-10px); }
-        .product-img { width: 100%; border-radius: 10px; margin-bottom: 1rem; }
-        
-        .btn-ficha {
-            background: none;
-            border: 1px solid var(--primary-green);
-            color: var(--primary-green);
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
+
+        .mv-card {
+            background: var(--crema);
+            border-left: 4px solid var(--verde-claro);
+            padding: 1.5rem 1.8rem;
+            border-radius: 0 12px 12px 0;
         }
 
-        /* Ficha Técnica (Modal) */
+        .mv-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--verde-oscuro);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mv-card p { color: #555; font-size: 0.92rem; }
+
+        .historia-img-wrap { position: relative; }
+        .historia-img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .historia-badge {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            background: var(--verde-oscuro);
+            color: var(--blanco);
+            padding: 1.4rem 1.8rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        .historia-badge .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .historia-badge span { font-size: 0.8rem; opacity: 0.8; }
+
+        /* ── VALORES / CHIPS ── */
+        .valores {
+            padding: 4rem 6%;
+            background: var(--verde-oscuro);
+            text-align: center;
+        }
+
+        .valores .section-title { color: var(--blanco); }
+        .valores .section-tag { color: var(--verde-menta); }
+
+        .valores-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .valor-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--blanco);
+            padding: 0.7rem 1.4rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .valor-chip i { color: var(--verde-menta); }
+
+        /* ── PRODUCTOS ── */
+        .shop-section {
+            padding: 6rem 6%;
+            background: var(--crema);
+        }
+
+        .shop-header { text-align: center; margin-bottom: 3rem; }
+        .shop-header p { color: #666; max-width: 560px; margin: 0.8rem auto 0; }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .product-card {
+            background: var(--blanco);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+
+        .product-img-wrap { position: relative; overflow: hidden; height: 200px; }
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .product-card:hover .product-img { transform: scale(1.05); }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--verde-claro);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .product-body { padding: 1.3rem; flex: 1; display: flex; flex-direction: column; }
+        .product-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--verde-oscuro);
+            margin-bottom: 0.3rem;
+        }
+        .product-origin {
+            font-size: 0.78rem;
+            color: var(--verde-claro);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .product-desc { font-size: 0.85rem; color: #777; flex: 1; }
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--verde-palido);
+        }
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--verde-oscuro);
+        }
+        .btn-ficha {
+            background: var(--verde-palido);
+            border: none;
+            color: var(--verde-oscuro);
+            padding: 7px 14px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.3s;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .btn-ficha:hover { background: var(--verde-menta); }
+
+        /* ── MODAL ── */
         .modal {
             display: none;
-            position: fixed; z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.7);
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
         }
+        .modal.active { display: flex; }
+
         .modal-content {
-            background: white;
-            margin: 10% auto;
-            padding: 2rem;
-            width: 80%; max-width: 500px;
-            border-radius: 10px;
+            background: var(--blanco);
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 520px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            position: relative;
+            animation: modalIn 0.3s ease;
         }
 
-        /* Ubicación */
-        .location { padding: 4rem 5%; background: #f9f9f9; text-align: center; }
-        .map-container { margin-top: 2rem; width: 100%; height: 400px; border-radius: 15px; overflow: hidden; }
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
 
-        footer { padding: 2rem; text-align: center; background: var(--primary-green); color: white; }
+        .modal-close {
+            position: absolute;
+            top: 1rem; right: 1.2rem;
+            background: none; border: none;
+            font-size: 1.5rem; cursor: pointer;
+            color: #aaa; transition: color 0.2s;
+        }
+        .modal-close:hover { color: var(--gris-texto); }
+
+        .modal-tag {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--verde-claro);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .modal-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--verde-oscuro);
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ficha-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .ficha-table tr { border-bottom: 1px solid #eee; }
+        .ficha-table td { padding: 0.7rem 0.5rem; }
+        .ficha-table td:first-child {
+            font-weight: 600;
+            color: var(--verde-oscuro);
+            width: 42%;
+        }
+        .ficha-table td:last-child { color: #555; }
+
+        /* ── UBICACIÓN ── */
+        .location {
+            padding: 6rem 6%;
+            background: var(--blanco);
+        }
+
+        .location-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .location-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--verde-oscuro);
+            margin-bottom: 1.2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.93rem;
+            color: #555;
+        }
+        .info-item i {
+            color: var(--verde-claro);
+            font-size: 1.1rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .horarios {
+            background: var(--crema);
+            padding: 1.5rem;
+            border-radius: 14px;
+            margin-top: 1.5rem;
+        }
+        .horarios h4 {
+            font-weight: 600;
+            color: var(--verde-oscuro);
+            margin-bottom: 0.8rem;
+        }
+        .horarios p { font-size: 0.88rem; color: #666; }
+
+        .social-contact { margin-top: 1.5rem; }
+        .social-contact h4 { font-weight: 600; color: var(--verde-oscuro); margin-bottom: 0.8rem; }
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: transform 0.2s;
+        }
+        .social-btn:hover { transform: translateY(-2px); }
+        .btn-ig { background: #fde7f3; color: #c13584; }
+        .btn-fb { background: #e7f0fd; color: #1877f2; }
+        .btn-wa { background: #e7fdf1; color: #25d366; }
+        .btn-tk { background: #f0e7fd; color: #69c9d0; }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 420px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        .map-container iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--verde-oscuro);
+            color: rgba(255,255,255,0.85);
+            padding: 3rem 6% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--blanco);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+
+        .footer-col h4 {
+            color: var(--blanco);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.92rem;
+        }
+        .footer-col a, .footer-col p {
+            display: block;
+            font-size: 0.86rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--verde-menta); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            font-size: 0.82rem;
+            opacity: 0.6;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .mvh-grid, .location-inner, .footer-grid { grid-template-columns: 1fr; }
+            .historia-badge { bottom: 12px; right: 12px; }
+            nav { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .product-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
+<!-- ══════════ HEADER ══════════ -->
 <header>
     <div class="logo-container">
-        <!-- Reemplaza 'logo.png' con el nombre de tu archivo de imagen -->
         <img src="ecomar.png" alt="Eco-Market Logo" class="logo-img">
-        <h2>Eco-Market Local</h2>
+        <div class="logo-text">
+            <h2>Eco-Market Local</h2>
+            <span>Mosquera, Cundinamarca</span>
+        </div>
     </div>
+    <nav>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#compras">Productos</a>
+        <a href="#ubicacion">Ubicación</a>
+    </nav>
     <div class="social-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/ecomarketmosquera" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/ecomarketmosquera" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.tiktok.com/@ecomarketmosquera" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
     </div>
 </header>
 
+<!-- ══════════ HERO ══════════ -->
 <section class="hero">
-    <h1>Minimercado Inteligente & Sostenible</h1>
-    <p>Tecnología para reducir desperdicios y apoyar lo local.</p><br>
-    <a href="#compras" class="btn-main">Empezar a comprar</a>
+    <div class="hero-content">
+        <div class="hero-badge">🌿 Mosquera, Cundinamarca</div>
+        <h1>El Minimercado que Cuida tu Familia y el Planeta</h1>
+        <p>Productos de canasta familiar frescos, locales y sostenibles. Tecnología que reduce el desperdicio y apoya a los productores de nuestra región.</p>
+        <div class="hero-buttons">
+            <a href="#compras" class="btn-main">Ver Productos</a>
+            <a href="#nosotros" class="btn-outline">Conócenos</a>
+        </div>
+    </div>
 </section>
 
+<!-- ══════════ SOBRE NOSOTROS ══════════ -->
+<section id="nosotros" class="sobre-nosotros">
+    <div class="mvh-grid">
+        <div class="mvh-texto">
+            <span class="section-tag">Nuestra Historia</span>
+            <h2 class="section-title">Nacimos del barrio, crecemos con la comunidad</h2>
+            <p>Eco-Market Local nació en 2022 como respuesta a una necesidad real: contar con un minimercado de barrio que fuera honesto, fresco y amigable con el medio ambiente en el municipio de Mosquera.</p>
+            <p>Desde nuestros inicios, apostamos por aliarnos con campesinos de la Sabana de Bogotá y municipios vecinos, reduciendo intermediarios y asegurando precios justos tanto para el productor como para el consumidor.</p>
+            <div class="mv-cards">
+                <div class="mv-card">
+                    <h3><i class="fas fa-seedling"></i> Misión</h3>
+                    <p>Brindar a la comunidad productos de consumo básico de manera eficiente, accesible y sostenible, mediante herramientas tecnológicas que reduzcan el desperdicio de alimentos, mejoren la experiencia de compra y apoyen a los productores locales.</p>
+                </div>
+                <div class="mv-card">
+                    <h3><i class="fas fa-eye"></i> Visión</h3>
+                    <p>Ser, en los próximos 5 años, el minimercado referente de Mosquera por su innovación, sostenibilidad y cercanía comunitaria, destacándonos como modelo de negocio eficiente que integra tecnología y consumo responsable en el entorno barrial.</p>
+                </div>
+            </div>
+        </div>
+        <div class="historia-img-wrap">
+            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&q=80&w=700" alt="Mercado local" class="historia-img">
+            <div class="historia-badge">
+                <div class="num">2+</div>
+                <span>Años sirviendo<br>a Mosquera</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════ VALORES ══════════ -->
+<section class="valores">
+    <span class="section-tag">Lo que nos define</span>
+    <h2 class="section-title">Nuestros Valores</h2>
+    <div class="valores-grid">
+        <div class="valor-chip"><i class="fas fa-leaf"></i> Sostenibilidad</div>
+        <div class="valor-chip"><i class="fas fa-handshake"></i> Comercio Justo</div>
+        <div class="valor-chip"><i class="fas fa-recycle"></i> Cero Desperdicio</div>
+        <div class="valor-chip"><i class="fas fa-map-marker-alt"></i> Producción Local</div>
+        <div class="valor-chip"><i class="fas fa-microchip"></i> Innovación</div>
+        <div class="valor-chip"><i class="fas fa-heart"></i> Comunidad</div>
+        <div class="valor-chip"><i class="fas fa-shield-alt"></i> Calidad Garantizada</div>
+        <div class="valor-chip"><i class="fas fa-box-open"></i> Empaque Biodegradable</div>
+    </div>
+</section>
+
+<!-- ══════════ PRODUCTOS ══════════ -->
 <section id="compras" class="shop-section">
-    <h2>Nuestros Productos Destacados</h2>
+    <div class="shop-header">
+        <span class="section-tag">Canasta Familiar</span>
+        <h2 class="section-title">Nuestros Productos Destacados</h2>
+        <p>Todos frescos, con origen verificado y empacados de forma responsable.</p>
+    </div>
+
     <div class="product-grid">
-        <!-- Producto 1 -->
+
+        <!-- 1 -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&q=80&w=400" alt="Aguacate" class="product-img">
-            <h3>Aguacate Local</h3>
-            <p>$4.500 / lb</p>
-            <button class="btn-ficha" onclick="openModal('Aguacate Orgánico', 'Origen: Huila. Cultivado sin pesticidas. Envase: Biodegradable.')">Ver Ficha Técnica</button>
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&q=80&w=500" alt="Aguacate" class="product-img">
+                <span class="product-badge">Orgánico</span>
+            </div>
+            <div class="product-body">
+                <h3>Aguacate Hass</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Tibacuy, Cundinamarca</p>
+                <p class="product-desc">Variedad Hass, cremoso, ideal para guacamole y ensaladas. Cultivado sin pesticidas.</p>
+                <div class="product-footer">
+                    <span class="product-price">$4.500 / lb</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Aguacate Hass Orgánico',
+                        origen:'Tibacuy, Cundinamarca',
+                        variedad:'Hass',
+                        peso:'Aprox. 200–300 g / unidad',
+                        precio:'$4.500 / libra',
+                        empaque:'Bolsa biodegradable o a granel',
+                        certificacion:'Cultivo limpio, sin pesticidas',
+                        conservacion:'Temperatura ambiente hasta madurar; refrigerar si ya está maduro',
+                        aporte:'Rico en grasas saludables, vitaminas E y K'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
         </div>
-        <!-- Producto 2 -->
+
+        <!-- 2 -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400" alt="Pan" class="product-img">
-            <h3>Pan Artesanal</h3>
-            <p>$3.000 / unidad</p>
-            <button class="btn-ficha" onclick="openModal('Pan de Masa Madre', 'Ingredientes: Harina integral, agua, sal. Sin conservantes.')">Ver Ficha Técnica</button>
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?auto=format&fit=crop&q=80&w=500" alt="Papa" class="product-img">
+                <span class="product-badge">Local</span>
+            </div>
+            <div class="product-body">
+                <h3>Papa Pastusa</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Subachoque, Cundinamarca</p>
+                <p class="product-desc">Papa pastusa de primera selección, piel lisa y pulpa firme. Perfecta para sopa, sudado y frituras.</p>
+                <div class="product-footer">
+                    <span class="product-price">$2.200 / kg</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Papa Pastusa Selección',
+                        origen:'Subachoque, Cundinamarca',
+                        variedad:'Pastusa (Solanum phureja)',
+                        peso:'Unidades de 80–150 g',
+                        precio:'$2.200 / kilogramo',
+                        empaque:'Costal de fique 5 kg',
+                        certificacion:'Buenas Prácticas Agrícolas (BPA)',
+                        conservacion:'Lugar fresco y seco, evitar luz directa',
+                        aporte:'Carbohidratos complejos, potasio y vitamina C'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
         </div>
-        <!-- Producto 3 -->
+
+        <!-- 3 -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400" alt="Limpieza" class="product-img">
-            <h3>Detergente Bio</h3>
-            <p>$12.000 / litro</p>
-            <button class="btn-ficha" onclick="openModal('Detergente Eco', '100% biodegradable. Envase retornable para recarga (Zero Waste).')">Ver Ficha Técnica</button>
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1587735243615-c03f25aaff15?auto=format&fit=crop&q=80&w=500" alt="Arroz" class="product-img">
+                <span class="product-badge">Granel</span>
+            </div>
+            <div class="product-body">
+                <h3>Arroz Blanco Extra</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Espinal, Tolima</p>
+                <p class="product-desc">Arroz blanco tipo extra, grano largo y entero. Procesado y seleccionado en molino local.</p>
+                <div class="product-footer">
+                    <span class="product-price">$3.800 / kg</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Arroz Blanco Extra Tipo A',
+                        origen:'Espinal, Tolima',
+                        variedad:'Fedearroz 473',
+                        peso:'Venta a granel por kg',
+                        precio:'$3.800 / kilogramo',
+                        empaque:'Bolsa reutilizable de tela o papel kraft',
+                        certificacion:'Molino certificado ICA',
+                        conservacion:'Recipiente hermético, lugar seco y fresco',
+                        aporte:'Fuente de energía, bajo en grasa, sin gluten'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=500" alt="Leche" class="product-img">
+                <span class="product-badge">Fresco</span>
+            </div>
+            <div class="product-body">
+                <h3>Leche Entera Fresca</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Bojacá, Cundinamarca</p>
+                <p class="product-desc">Leche cruda pasteurizada en planta local, con alto contenido de proteína. Sin conservantes artificiales.</p>
+                <div class="product-footer">
+                    <span class="product-price">$2.800 / litro</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Leche Entera Pasteurizada',
+                        origen:'Hato lechero de Bojacá, Cundinamarca',
+                        variedad:'Raza Holstein-Normando',
+                        peso:'Bolsa de 1 litro',
+                        precio:'$2.800 / litro',
+                        empaque:'Bolsa de polietileno reciclable',
+                        certificacion:'INVIMA registro sanitario vigente',
+                        conservacion:'Refrigerar entre 2–4 °C, consumir en 3 días',
+                        aporte:'Calcio, proteínas, vitamina D y B12'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=500" alt="Pan" class="product-img">
+                <span class="product-badge">Artesanal</span>
+            </div>
+            <div class="product-body">
+                <h3>Pan Integral Artesanal</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Panadería La Sabana – Mosquera</p>
+                <p class="product-desc">Elaborado con masa madre natural, harina integral y sin conservantes. Horneado fresco cada mañana.</p>
+                <div class="product-footer">
+                    <span class="product-price">$3.200 / unidad</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Pan Integral de Masa Madre',
+                        origen:'Panadería La Sabana, Mosquera, Cund.',
+                        variedad:'Masa madre + harina integral de trigo',
+                        peso:'Aprox. 400 g / hogaza',
+                        precio:'$3.200 / unidad',
+                        empaque:'Bolsa de papel kraft biodegradable',
+                        certificacion:'Elaboración artesanal, insumos naturales',
+                        conservacion:'Temperatura ambiente 2 días; congelar si es más tiempo',
+                        aporte:'Fibra, hierro, complejo B. Sin aditivos artificiales'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1482029255085-35a4a48b7084?auto=format&fit=crop&q=80&w=500" alt="Huevos" class="product-img">
+                <span class="product-badge">Campesino</span>
+            </div>
+            <div class="product-body">
+                <h3>Huevos Criollos AA</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Granja El Porvenir – Funza</p>
+                <p class="product-desc">Huevos de gallina criolla de pastoreo libre. Yema de color intenso, sabor auténtico y alta nutrición.</p>
+                <div class="product-footer">
+                    <span class="product-price">$650 / unidad</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Huevos Criollos de Pastoreo AA',
+                        origen:'Granja El Porvenir, Funza, Cundinamarca',
+                        variedad:'Gallina criolla de pastoreo libre',
+                        peso:'55–65 g / unidad (calibre AA)',
+                        precio:'$650 / unidad — $7.200 / docena',
+                        empaque:'Cubeta de cartón reciclado x12',
+                        certificacion:'Bienestar animal verificado, sin jaulas',
+                        conservacion:'Refrigerar a 4–8 °C, consumir antes de 21 días',
+                        aporte:'Proteína completa, vitaminas A, D, E y Omega-3'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1559458990-6c8b71dbaa6a?auto=format&fit=crop&q=80&w=500" alt="Zanahoria" class="product-img">
+                <span class="product-badge">Orgánico</span>
+            </div>
+            <div class="product-body">
+                <h3>Zanahoria Orgánica</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Zipaquirá, Cundinamarca</p>
+                <p class="product-desc">Zanahoria dulce de cultivo agroecológico. Excelente para jugos naturales, sopas y acompañamientos.</p>
+                <div class="product-footer">
+                    <span class="product-price">$1.800 / lb</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Zanahoria Orgánica Agroecológica',
+                        origen:'Vereda El Empalizado, Zipaquirá, Cund.',
+                        variedad:'Nantes Mejorado',
+                        peso:'Paquete de 500 g aprox.',
+                        precio:'$1.800 / libra',
+                        empaque:'Malla de yute biodegradable',
+                        certificacion:'Agroecológico, libre de plaguicidas sintéticos',
+                        conservacion:'Refrigerar en bolsa perforada hasta 2 semanas',
+                        aporte:'Beta-caroteno (vitamina A), fibra, vitamina K'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&q=80&w=500" alt="Frijol" class="product-img">
+                <span class="product-badge">Granel</span>
+            </div>
+            <div class="product-body">
+                <h3>Fríjol Cargamanto Rojo</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Albán, Cundinamarca</p>
+                <p class="product-desc">Fríjol seco de primera calidad, grano grande y uniform. Base infaltable de la cocina colombiana.</p>
+                <div class="product-footer">
+                    <span class="product-price">$6.500 / lb</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Fríjol Cargamanto Rojo Seleccionado',
+                        origen:'Vereda La Pradera, Albán, Cundinamarca',
+                        variedad:'Cargamanto Rojo (Phaseolus vulgaris)',
+                        peso:'Venta a granel, mínimo 500 g',
+                        precio:'$6.500 / libra',
+                        empaque:'Bolsa de papel kraft reutilizable',
+                        certificacion:'Secado natural al sol, sin fumigación post-cosecha',
+                        conservacion:'Recipiente hermético y oscuro, hasta 12 meses',
+                        aporte:'Proteína vegetal, hierro, fibra, ácido fólico'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1597302146952-bb75e8f6d503?auto=format&fit=crop&q=80&w=500" alt="Aceite" class="product-img">
+                <span class="product-badge">Artesanal</span>
+            </div>
+            <div class="product-body">
+                <h3>Aceite de Palma Artesanal</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Villeta, Cundinamarca</p>
+                <p class="product-desc">Aceite rojo de palma de primera extracción, sin refinamiento industrial. Alto en carotenoides naturales.</p>
+                <div class="product-footer">
+                    <span class="product-price">$9.500 / 500 ml</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Aceite de Palma Rojo Artesanal',
+                        origen:'Asociación Palmicultores de Villeta, Cund.',
+                        variedad:'Palma de aceite (Elaeis guineensis)',
+                        peso:'Botella de 500 ml',
+                        precio:'$9.500 / 500 ml',
+                        empaque:'Botella de vidrio retornable',
+                        certificacion:'Extracción artesanal, primera prensada en frío',
+                        conservacion:'Lugar fresco y oscuro, usar antes de 12 meses',
+                        aporte:'Vitamina E, beta-caroteno, antioxidantes'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&q=80&w=500" alt="Panela" class="product-img">
+                <span class="product-badge">Tradicional</span>
+            </div>
+            <div class="product-body">
+                <h3>Panela Redonda Campesina</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: La Mesa, Cundinamarca</p>
+                <p class="product-desc">Panela 100% pura de caña, sin aditivos ni blanqueadores. Ideal para agua panela, cocina y repostería.</p>
+                <div class="product-footer">
+                    <span class="product-price">$3.000 / 500 g</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Panela Redonda Pura de Caña',
+                        origen:'Trapiche familiar, La Mesa, Cundinamarca',
+                        variedad:'Caña de azúcar criolla (Saccharum officinarum)',
+                        peso:'500 g / unidad redonda',
+                        precio:'$3.000 / 500 g',
+                        empaque:'Papel encerado natural, sin plástico',
+                        certificacion:'Elaboración artesanal, sin aditivos químicos',
+                        conservacion:'Lugar seco y fresco, hasta 6 meses',
+                        aporte:'Minerales naturales (calcio, potasio, hierro), energía'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&q=80&w=500" alt="Tomate" class="product-img">
+                <span class="product-badge">Fresco</span>
+            </div>
+            <div class="product-body">
+                <h3>Tomate Chonto Fresco</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Granada, Cundinamarca</p>
+                <p class="product-desc">Tomate chonto maduro, firme y sabroso. Perfecto para salsas, guisos y ensaladas frescas.</p>
+                <div class="product-footer">
+                    <span class="product-price">$2.500 / lb</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Tomate Chonto de Primera Selección',
+                        origen:'Invernaderos de Granada, Cundinamarca',
+                        variedad:'Chonto (Lycopersicum esculentum)',
+                        peso:'Aprox. 80–120 g / unidad',
+                        precio:'$2.500 / libra',
+                        empaque:'Bandeja reutilizable o a granel',
+                        certificacion:'Manejo integrado de plagas (MIP), sin pesticidas post-cosecha',
+                        conservacion:'Temperatura ambiente si está verde; refrigerar si está maduro',
+                        aporte:'Vitamina C, licopeno, antioxidantes, vitamina A'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="product-card">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=500" alt="Detergente" class="product-img">
+                <span class="product-badge">Zero Waste</span>
+            </div>
+            <div class="product-body">
+                <h3>Detergente Bio a Granel</h3>
+                <p class="product-origin"><i class="fas fa-map-pin"></i> Origen: Empresa local Mosquera</p>
+                <p class="product-desc">Detergente líquido 100% biodegradable para ropa y hogar. Trae tu envase y recarga, sin plástico nuevo.</p>
+                <div class="product-footer">
+                    <span class="product-price">$11.000 / litro</span>
+                    <button class="btn-ficha" onclick="openModal({
+                        nombre:'Detergente Bio Líquido – Sistema Recarga',
+                        origen:'CleanEco, Mosquera, Cundinamarca',
+                        variedad:'Fórmula enzimática biodegradable',
+                        peso:'Venta por litro (trae tu envase)',
+                        precio:'$11.000 / litro',
+                        empaque:'Envase retornable del cliente (Zero Waste)',
+                        certificacion:'Libre de fosfatos, biodegradable al 95%',
+                        conservacion:'Envase hermético, alejado del calor',
+                        aporte:'Reduce 80% de residuos plásticos vs. presentación convencional'
+                    })">Ver Ficha</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════ UBICACIÓN ══════════ -->
+<section id="ubicacion" class="location">
+    <div style="text-align:center;">
+        <span class="section-tag">¿Dónde estamos?</span>
+        <h2 class="section-title">Visítanos en Mosquera</h2>
+    </div>
+    <div class="location-inner">
+        <div class="location-info">
+            <h3>Información de Contacto</h3>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Dirección:</strong><br>
+                    Carrera 4 #11–38, Barrio Centro<br>
+                    Mosquera, Cundinamarca
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <strong>Teléfono:</strong><br>
+                    (601) 830-4521
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <strong>WhatsApp:</strong><br>
+                    +57 300 123 4567
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email:</strong><br>
+                    contacto@ecomarketmosquera.com
+                </div>
+            </div>
+
+            <div class="horarios">
+                <h4><i class="fas fa-clock" style="color:var(--verde-claro);margin-right:6px"></i> Horarios de Atención</h4>
+                <p>Lunes a Viernes: 7:00 a.m. – 8:00 p.m.</p>
+                <p>Sábados: 7:00 a.m. – 6:00 p.m.</p>
+                <p>Domingos y Festivos: 8:00 a.m. – 2:00 p.m.</p>
+            </div>
+
+            <div class="social-contact">
+                <h4>Síguenos en redes</h4>
+                <a href="https://www.instagram.com/ecomarketmosquera" target="_blank" class="social-btn btn-ig"><i class="fab fa-instagram"></i> @ecomarketmosquera</a>
+                <a href="https://www.facebook.com/ecomarketmosquera" target="_blank" class="social-btn btn-fb"><i class="fab fa-facebook"></i> Eco-Market Mosquera</a>
+                <a href="https://wa.me/573001234567" target="_blank" class="social-btn btn-wa"><i class="fab fa-whatsapp"></i> Escribir ahora</a>
+                <a href="https://www.tiktok.com/@ecomarketmosquera" target="_blank" class="social-btn btn-tk"><i class="fab fa-tiktok"></i> @ecomarketmosquera</a>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15913.32!2d-74.2278!3d4.7072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9f2a8b1c5e7d%3A0x9a0a7f34b5c6d8e1!2sMosquera%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1714560000000!5m2!1ses!2sco"
+                width="100%" height="100%" allowfullscreen="" loading="lazy">
+            </iframe>
         </div>
     </div>
 </section>
 
-<section class="location">
-    <h2>Encuéntranos</h2>
-    <p>Calle de la Sostenibilidad #123, Ciudad Inteligente</p>
-    <div class="map-container">
-        <!-- Mapa de ejemplo de Google Maps -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15905.72403328221!2d-74.072092!3d4.60971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f990a597509f3%3A0xe5a3637e750f28e2!2sBogot%C3%A1!5e0!3m2!1ses!2sco!4v1714560000000!5m2!1ses!2sco" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-</section>
-
+<!-- ══════════ FOOTER ══════════ -->
 <footer>
-    <p>&copy; 2026 Eco-Market Local - Proyecto Universitario</p>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <h3>Eco-Market Local</h3>
+            <p>Minimercado inteligente y sostenible en el corazón de Mosquera, Cundinamarca. Comprometidos con tu familia, los productores locales y el planeta.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navegación</h4>
+            <a href="#nosotros">Quiénes Somos</a>
+            <a href="#compras">Productos</a>
+            <a href="#ubicacion">Ubicación</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>Cra. 4 #11–38, Mosquera</p>
+            <p>contacto@ecomarketmosquera.com</p>
+            <p>+57 300 123 4567</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Eco-Market Local — Mosquera, Cundinamarca · Proyecto Universitario</p>
+    </div>
 </footer>
 
-<!-- Modal para Ficha Técnica -->
-<div id="techModal" class="modal">
+<!-- ══════════ MODAL FICHA TÉCNICA ══════════ -->
+<div id="techModal" class="modal" onclick="handleModalClick(event)">
     <div class="modal-content">
-        <h2 id="modalTitle"></h2><br>
-        <p id="modalBody"></p><br>
+        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <p class="modal-tag">Ficha Técnica del Producto</p>
+        <h2 id="modalTitle"></h2>
+        <table class="ficha-table" id="modalTable"></table>
+        <br>
         <button class="btn-main" onclick="closeModal()">Cerrar</button>
     </div>
 </div>
 
 <script>
-    function openModal(title, body) {
-        document.getElementById('modalTitle').innerText = title;
-        document.getElementById('modalBody').innerText = body;
-        document.getElementById('techModal').style.display = "block";
+    const labels = {
+        origen: 'Origen',
+        variedad: 'Variedad / Tipo',
+        peso: 'Presentación / Peso',
+        precio: 'Precio',
+        empaque: 'Empaque',
+        certificacion: 'Certificación',
+        conservacion: 'Conservación',
+        aporte: 'Aporte Nutricional / Ambiental'
+    };
+
+    function openModal(data) {
+        document.getElementById('modalTitle').innerText = data.nombre;
+        const table = document.getElementById('modalTable');
+        table.innerHTML = '';
+        for (const key in labels) {
+            if (data[key]) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${labels[key]}</td><td>${data[key]}</td>`;
+                table.appendChild(tr);
+            }
+        }
+        document.getElementById('techModal').classList.add('active');
     }
+
     function closeModal() {
-        document.getElementById('techModal').style.display = "none";
+        document.getElementById('techModal').classList.remove('active');
     }
+
+    function handleModalClick(e) {
+        if (e.target === document.getElementById('techModal')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
+    });
 </script>
 
 </body>
